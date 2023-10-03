@@ -32,28 +32,112 @@
             font-size: 18px;
         }
 
-        .download-button {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 24px;
-            background-color: #4CAF50;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
 
-        .download-button:hover {
-            background-color: #45a049;
-        }
+    :root {
+        --bg-color: rgb(30, 30, 30);
+        --border-color: rgb(40, 18, 18);
+        --primary-green: rgb(0, 140, 69);
+        --light-green: rgb(39, 206, 64);
+        --medium-dark-green: rgb(12 110 61);
+        --dark-green: rgb(6, 77, 42);
+        --border-color: rgb(40, 18, 18);
+        --text-color: white;
+        --primary-hover: rgb(10, 152, 80);
+
+        --bg-color-disabled: rgb(30, 30, 30);
+        --border-color-disabled: rgb(40, 18, 18);
+        --primary-green-disabled: rgb(189, 189, 189);
+        --light-green-disabled: rgb(193, 193, 193);
+        --medium-dark-green-disabled: rgb(83, 83, 83);
+        --dark-green-disabled: rgb(77, 77, 77);
+        --border-color-disabled: rgb(40, 18, 18);
+        --text-color-disabled: #c1c1c1;
+        --primary-hover-disabled: rgb(155, 155, 155);
+    }
+
+
+    @font-face{font-family:minecraft;font-style:normal;font-weight:400;src:local('Minecraft'),url('./fonts/MinecraftTen-VGORe.ttf') format('woff')}
+    .minecraft-button {
+        font-family: 'Minecraft', sans-serif;
+        font-size: 2.5rem;
+        text-decoration: none;
+        text-align: center;
+        text-shadow: var(--dark-green) 0 .1em 0;
+        color: var(--text-color); 
+        background-color: var(--primary-green);
+        position: relative;
+
+        width: 15em;
+        padding-bottom: .3em;
+        border-radius: .1rem;
+    }
+
+    .minecraft-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -.175em;
+      width: 102.5%;
+      height: 100%;
+      background-color: var(--medium-dark-green);
+      z-index: -1;
+      border: .07em solid var(--border-color);
+    }
+
+    .minecraft-button::after {
+      content: '';
+      position: absolute;
+      top: -0.175em;
+      left: 0;
+      width: 100%;
+      height: 125%;
+      background-image: linear-gradient(
+        var(--light-green) 50%,
+        var(--dark-green)
+      );
+      z-index: -1;
+      border: .07em solid var(--border-color);
+    }
+
+    .minecraft-button:hover {
+      background-color: var(--primary-hover);
+      color: #fff;
+    }
+
+    .minecraft-button.disabled {
+        background-color: var(--primary-green-disabled);
+        text-shadow: var(--dark-green-disabled) 0 .1em 0;
+    }
+
+    .minecraft-button.disabled::before {
+      background-color: var(--medium-dark-green-disabled);
+      border: .07em solid var(--border-color-disabled);
+    }
+
+    .minecraft-button.disabled::after {
+      border: .07em solid var(--border-color-disabled);
+      background-image: linear-gradient(
+        var(--light-green-disabled) 50%,
+        var(--dark-green-disabled)
+      );
+    }
+
+    .minecraft-button.disabled:hover {
+      background-color: var(--primary-hover-disabled);
+      color: #fff;
+    }
     </style>
 </head>
 <body>
     <div id="container">
-        <h1>Descarga el Launcher de Minecraft</h1>
-        <p>¡Obtén la última versión del Launcher para comenzar tu aventura!</p>
-        <a href="enlace_a_tu_launcher.exe" class="download-button">Descargar Launcher</a>
+        <div style="margin-bottom: 10px;">
+            <img style="width: 100%;" src="./logo.svg" alt="">
+        </div>
+        <p style="width: 650px;">
+            El siguiente archivo es un cliente que te conectará con el servidor de Minecraft, dicho cliente mantendrá tu juego actualizado a todas las mejoras.
+        </p>
+
+        <a href="https://drive.google.com/file/d/13g5aMPf_4tKomBeNIVtXl_ganyunVKlr/view?usp=sharing" target="_blank" class='minecraft-button'>Descargar Launcher v1.0.25</a>
     </div>
 </body>
 </html>
