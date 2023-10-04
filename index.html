@@ -126,6 +126,21 @@
       background-color: var(--primary-hover-disabled);
       color: #fff;
     }
+    body {
+        background-color: #1f1f1f;
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+     
+    @keyframes fadeInAnimation {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+         }
+    }
     </style>
 </head>
 <body>
